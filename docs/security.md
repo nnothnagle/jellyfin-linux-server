@@ -19,11 +19,12 @@ Currently permitted inbound services include:
 
 SSH is used to remotely administer the Ubuntu server from another computer on the local network.
 
-The current firewall rule permits SSH connections from any network interface accepted by the server. This configuration works but will be reviewed as part of the security-hardening process.
+SSH access is restricted by UFW (Uncomplicated Firewall) to devices on the trusted 192.168.0.0/24 local network. Connections to TCP (Transmission Control Protocol) port 22 from outside this subnet are blocked by the server firewall.
+
+SSH connectivity was tested successfully from a Windows PC after the firewall rule was changed.
 
 ## Security Improvements Planned
 
-- Restrict SSH access to the trusted local network
 - Review UFW default firewall policies
 - Verify only necessary network services are listening
 - Review SSH authentication configuration
