@@ -17,19 +17,20 @@ Currently permitted inbound services include:
 
 ### SSH (Secure Shell)
 
-SSH is used to remotely administer the Ubuntu server from another computer on the local network.
+Remote administration is performed using SSH.
 
-SSH access is restricted by UFW (Uncomplicated Firewall) to devices on the trusted 192.168.0.0/24 local network. Connections to TCP (Transmission Control Protocol) port 22 from outside this subnet are blocked by the server firewall.
+SSH access is restricted by UFW (Uncomplicated Firewall) to devices on the trusted `192.168.0.0/24` local network.
 
-SSH connectivity was tested successfully from a Windows PC after the firewall rule was changed.
+Public-key authentication has been configured for the administrative user. The private key is stored on the administrator's workstation and protected with a passphrase. Only the corresponding public key is stored on the server.
+
+SSH password authentication has been disabled to reduce the risk of password-based attacks.
+
+The SSH configuration was validated before being reloaded. Key-based authentication was successfully tested from a separate terminal, and password authentication was independently verified as disabled.
 
 ## Security Improvements Planned
 
 - Review UFW default firewall policies
-- Verify only necessary network services are listening
-- Review SSH authentication configuration
 - Install operating system security updates
-- Verify Jellyfin runs using a dedicated service account
 - Document and verify all security changes
 
 ## Security Principle
