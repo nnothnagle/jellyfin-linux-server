@@ -9,7 +9,7 @@ The Jellyfin server is connected to the local network using a wired Ethernet con
 - **Primary Interface:** eno1
 - **Connection Type:** Wired Ethernet
 - **IPv4 Network:** 192.168.0.0/24
-- **Address Assignment:** DHCP
+- **Address Assignment:** DHCP with a router-managed address reservation
 - **Wi-Fi Interface:** wlp2s0 (currently disabled)
 
 > The server's exact IP address is intentionally omitted from public documentation.
@@ -34,7 +34,5 @@ Current required access includes:
 
 ## Future Improvements
 
-- Configure a DHCP reservation for the Jellyfin server
-- Restrict SSH access to trusted local-network addresses
 - Review whether UDP 7359 should be permitted for local Jellyfin discovery
 - Document remote-access architecture if remote Jellyfin access is added
