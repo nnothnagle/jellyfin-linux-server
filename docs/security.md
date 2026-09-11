@@ -27,11 +27,13 @@ SSH password authentication has been disabled to reduce the risk of password-bas
 
 The SSH configuration was validated before being reloaded. Key-based authentication was successfully tested from a separate terminal, and password authentication was independently verified as disabled.
 
-## Security Improvements Planned
+## System Maintenance and Verification
 
-- Review UFW default firewall policies
-- Install operating system security updates
-- Document and verify all security changes
+- Verified UFW default policy is deny incoming and allow outgoing.
+- Installed all available standard Ubuntu package updates.
+- Rebooted the server and verified SSH and Jellyfin returned automatically.
+- Verified Secure Boot is enabled.
+- Attempted the available UEFI dbx Secure Boot security update. The update was reported as failed because fwupd could not verify the installed dbx version after reboot. Further investigation is pending.
 
 ## Security Principle
 
